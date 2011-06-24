@@ -15,7 +15,7 @@ wine <- nwine
 
 head(wine)
 
-# Question 1
+
 # Forward Stepwise Selection using cross-validation
 library(leaps)
 
@@ -73,7 +73,7 @@ fwd_error <- overall_min_err
 fwd_lm <- overall_lm
 fwd_cols <- overall_bucket
 
-# Question 2
+
 # Backward Stepwise Selection using cross-validation
 overall_min_err <- 999999
 #10-fold cross-validation
@@ -128,7 +128,7 @@ back_lm <- overall_lm
 back_cols <- overall_bucket
 
 
-# Question 3
+
 # All subset Selection using cross-validation
 #10-fold cross-validation
 
@@ -173,7 +173,7 @@ all_error <- overall_err
 all_lm <- overall_lm
 all_cols <- overall_cols
 
-# Question 4
+
 # Lasso with cross-validation
 i <- 1
 test.index <- seq((testsize*(i-1))+1, testsize * i)
@@ -202,7 +202,7 @@ lasso_coeff <- predict.lars(fit.lasso, s = s.best, type="coefficients", mode = "
 lasso_coeff <- lasso_coeff[which(lasso_coeff != 0)]
 
 
-# Question 5
+
 # Chart
 
 all.rslt <- list(fwd_error, fwd_lm$coefficients, back_error, back_lm$coefficients, all_error, all_lm$coefficients, lasso_error, lasso_coeff)
